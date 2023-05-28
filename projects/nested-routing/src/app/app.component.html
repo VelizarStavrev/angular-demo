@@ -1,0 +1,29 @@
+<h1>Home</h1>
+<h2>Select a first level of routing:</h2>
+
+<nav>
+  <ul>
+    <li>
+      <a routerLink="">Home</a>
+    </li>
+
+    <li>
+      <a routerLink="component-one">Component One</a>
+    </li>
+
+    <li>
+      <a [routerLink]="['/', { outlets: { 'second': 'component-two' } }]">Component Two</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="first-level-container">
+  <h3>First level container:</h3>
+  <router-outlet></router-outlet>
+  <router-outlet name="second-level"></router-outlet>
+</div>
+
+<div class="second-level-container">
+  <h3>Second level container:</h3>
+  <router-outlet name="second"></router-outlet>
+</div>
